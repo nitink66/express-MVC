@@ -1,0 +1,23 @@
+{
+  "name": "express-mvc",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nitink66/express-MVC.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/nitink66/express-MVC/issues"
+  },
+  "homepage": "https://github.com/nitink66/express-MVC#readme",
+  "dependencies": {
+    "express": "^4.18.1"
+  }
+}
