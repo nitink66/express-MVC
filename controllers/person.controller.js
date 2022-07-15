@@ -1,3 +1,4 @@
+const path = require('path');
 const persons = require('../models/persons.model');
 
 function getAllPersons(req, res) {
@@ -14,7 +15,7 @@ function getSinglePersonByID(req, res) {
     }
 }
 
-function updatPerson(req, res) {
+function updatePerson(req, res) {
     console.log(req.body);
     if (!req.body.name) {
         return res.status(400).json({
@@ -30,4 +31,10 @@ function updatPerson(req, res) {
     res.json(persons);
 }
 
-module.exports = { getAllPersons, getSinglePersonByID, updatPerson };
+function sendFile(req, res) {
+    const resultFile = path.join(__dirname, '..', 'public', 'skimountain.jpg');
+
+    res.sendFile(resultFile);
+}
+
+module.exports = { getAllPersons, getSinglePersonByID, updatePerson, sendFile };

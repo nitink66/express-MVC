@@ -12,6 +12,8 @@ personRouter.get('/', personController.getAllPersons);
 
 personRouter.get('/:personID', personController.getSinglePersonByID);
 
-personRouter.post('/', personController.updatPerson);
+personRouter.post('/', personController.updatePerson);
+
+personRouter.get('/1/getFile', personController.sendFile);
 
 module.exports = personRouter;
