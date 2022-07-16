@@ -1,4 +1,5 @@
 const express = require('express');
+const path = require('path');
 const personsRouter = require('./routes/persons.routes');
 
 const app = express();
@@ -13,9 +14,16 @@ app.use((req, res, next) => {
 });
 
 app.use(express.json());
+app.set('view engine', 'hbs');
+app.set('views', path.join(__dirname, 'views'));
+
+app.use('/site', express.static(path.join(__dirname, 'public')));
 
 app.get('/', (req, res) => {
-    res.send(' You have hit the main route :) ');
+    res.render('index', {
+        title: 'File render example',
+        mainTitle: "Let's GOOOO",
+    });
 });
 
 app.get('/test', (req, res) => {
